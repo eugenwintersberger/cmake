@@ -9,4 +9,9 @@
 # =============================================================================
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-set(CMAKE_ARCHVIE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+
+message(STATUS "Build output directories:")
+message(STATUS "Write runtime files to: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+message(STATUS "Write library files to: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+message(STATUS "Write archive files to: ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
