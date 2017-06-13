@@ -16,7 +16,7 @@ set(TEST_REPORT_PATH ${PROJECT_BINARY_DIR}/test/logs)
 #
 # macro adding a test including all command line options to write logging files
 #
-macro (add_logging_test test_name test_target working_dir)
+macro (add_boost_logging_test test_name test_target working_dir)
     set(TEST_LOG_FILE    ${TEST_LOG_PATH}/${test_target}.log.xml)
     set(TEST_REPORT_FILE ${TEST_REPORT_PATH}/${test_target}.report.xml)
 
@@ -48,4 +48,14 @@ macro (add_logging_test test_name test_target working_dir)
     set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES
     ${TEST_LOG_FILE} ${TEST_REPORT_FILE})
 
+endmacro()
+
+#
+# this macro will be used by all tests to build properly with Boost unit test
+#
+macro(set_boost_test_definitions source_list mod_description)
+    list(GET ${source_list} 0 FIRST_SOURCE_FILE)
+    message(STATUS "First source file is ${FIRST_SOURCE_FILE}")
+    set_source_files_properties(${FIRST_SOURCE_FILE} PROPERTIES
+                                COMPILE_DEFINITIONS "BOOST_TEST_DYN_LINK; BOOST_TEST_MODULE=${mod_description}")
 endmacro()

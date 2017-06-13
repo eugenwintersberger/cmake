@@ -35,18 +35,19 @@ A short overview
 * ``ConanSetup.cmake`` - run boiler-plate code to use conan from within CMake. This
   script will stop the build if the ``conan`` executable cannot be found.
 
-* ``BoostTestLogConfig.cmake`` - help setting up test logging when using Boost's
+* ``BoostTestConfig.cmake`` - help setting up test logging when using Boost's
   testing framework. It defines two variables
 
   * ``TEST_LOG_PATH`` and
   * ``TEST_REPORT_PATH``
 
-  which determine where the log files will be written and exports a macro
-  ``add_logging_test`` which adds logging options to the test command. The
-  report and log files are alos added to the clean target so that they will be
-  removed during ``make clean``.
+  which determine where the log files will be written and exports two macros
+  * ``add_boost_logging_test`` - which adds logging options to the test command
+    and ensures that the log files will be removed during ``make clean``.
+  * ``set_boost_test_definitions`` - add build definitions for boost tests.
+
 * ``EnsureBuildType.cmake`` - very simple, just breaks the configuration run
   if ``CMAKE_BUILD_TYPE`` is not provided by the user
 * ``WindowsUtils.cmake`` - creates two batch files to build the code and run
   tests. The files ensure that the appropriate configuration is passed to the
-  command line. 
+  command line.
