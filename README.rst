@@ -42,6 +42,6 @@ A short overview
   * ``TEST_REPORT_PATH``
 
   which determine where the log files will be written and exports a macro
-  ``add_loggin_test`` which adds logging options to the test command. The
+  ``add_logging_test`` which adds logging options to the test command. The
   report and log files are alos added to the clean target so that they will be
   removed during ``make clean``.
