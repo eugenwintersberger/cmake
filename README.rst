@@ -45,3 +45,8 @@ A short overview
   ``add_logging_test`` which adds logging options to the test command. The
   report and log files are alos added to the clean target so that they will be
   removed during ``make clean``.
+* ``EnsureBuildType.cmake`` - very simple, just breaks the configuration run
+  if ``CMAKE_BUILD_TYPE`` is not provided by the user
+* ``WindowsUtils.cmake`` - creates two batch files to build the code and run
+  tests. The files ensure that the appropriate configuration is passed to the
+  command line. 
