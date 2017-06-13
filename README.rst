@@ -51,3 +51,5 @@ A short overview
 * ``WindowsUtils.cmake`` - creates two batch files to build the code and run
   tests. The files ensure that the appropriate configuration is passed to the
   command line.
+* ``BoostLibrarySetup.cmake`` - set the basic ``Boost_USER_`` variables for
+  the Boost library search.
