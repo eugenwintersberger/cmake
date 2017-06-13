@@ -12,6 +12,9 @@ A short overview
 ================
 
 * ``PackageConfig.cmake`` - set the name of the package config and version file
+  by defining the two variables ``PACKAGE_VERSION_FILE_NAME`` and
+  ``PACKAGE_CONFIG_FILE_NAME``. Both are derived form the projects name and
+  version.
 * ``InstallConfig.cmake`` - define installation directories for various platforms
 * ``OutputDirConfig.cmake`` - set ouput directories for build artifacts
 * ``ConanSetup.cmake`` - run boiler-plate code to use conan from within CMake
