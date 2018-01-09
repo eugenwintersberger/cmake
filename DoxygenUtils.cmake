@@ -24,7 +24,13 @@ function(add_doxygen_source_deps)
 	
 	set(DEPENDENCIES)
 	foreach(deps ${ARGV})
-		list(APPEND DEPENDENCIES ${CMAKE_CURRENT_SOURCE_DIR}/${deps})
+	    if(IS_ABSOLUTE ${deps})
+	      list(APPEND DEPENDENCIES ${deps})
+	    else()
+	      #we assume here that the path is relative to the current 
+	      #source directory. 
+		  list(APPEND DEPENDENCIES ${CMAKE_CURRENT_SOURCE_DIR}/${deps})
+		endif()
 	endforeach()
 	
 	set(CMAKE_DOXYGEN_BUILD_DEPENDENCIES ${CMAKE_DOXYGEN_BUILD_DEPENDENCIES} 
